@@ -2,6 +2,8 @@ package Simulation;
 
 public class Test {
     public static void main(String[] args) {
-        System.out.println("Test");
+
+        SoftHeap sheap = new SoftHeap(0.01);
+        System.out.println(sheap);
     }
 }
