@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a57a19c-93fb-4084-91ca-a2cb273e233c" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Counter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CounterDeleteMin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SoftHeap/input1" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SoftHeap/input1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Testing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Testing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/input1" beforeDir="false" afterPath="$PROJECT_DIR$/src/input1" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +22,8 @@
       <file leaf-file-name="Testing.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Testing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="61" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
+            <state relative-caret-position="164">
+              <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -26,11 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SoftHeap.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SoftHeap.java">
+      <file leaf-file-name="input1" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/input1">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-497">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+            <state>
+              <caret column="177" selection-start-column="177" selection-end-column="177" />
             </state>
           </provider>
         </entry>
@@ -62,6 +67,8 @@
         <option value="$PROJECT_DIR$/src/Node.java" />
         <option value="$PROJECT_DIR$/src/SoftHeap.java" />
         <option value="$PROJECT_DIR$/src/TestToString.java" />
+        <option value="$PROJECT_DIR$/src/CounterDeleteMin.java" />
+        <option value="$PROJECT_DIR$/src/input1" />
         <option value="$PROJECT_DIR$/src/Testing.java" />
       </list>
     </option>
@@ -87,6 +94,8 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -103,8 +112,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -213,11 +220,12 @@
       <workItem from="1524579831390" duration="210000" />
       <workItem from="1524580045908" duration="431000" />
       <workItem from="1524580506098" duration="3120000" />
+      <workItem from="1524591913265" duration="860000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14456000" />
+    <option name="totallyTimeSpent" value="15316000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="23" width="1202" height="805" extended-state="0" />
@@ -232,12 +240,12 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.25581396" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25581396" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24958402" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24958402" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -265,6 +273,23 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Testing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="61" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SoftHeap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/TestToString.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
@@ -444,15 +469,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SoftHeap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-497">
+        <state relative-caret-position="51">
           <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CounterDeleteMin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#100#101#0" expanded="true" />
+            <element signature="e#130#131#0" expanded="true" />
+            <element signature="e#180#181#0" expanded="true" />
+            <element signature="e#230#231#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Counter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" selection-start-column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/input1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="177" selection-start-column="177" selection-end-column="177" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Testing.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="61" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
+        <state relative-caret-position="164">
+          <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

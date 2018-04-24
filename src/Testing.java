@@ -21,14 +21,14 @@ public class Testing {
         for (int i = 0; i < input.size(); i++) {
             switch (input.get(i)) {
                 case "c":
-                    String labelc = input.get(++i);
+                    String labelc = "H"+input.get(++i);
                     SoftHeap sheapc = new SoftHeap(0);
-                    sheapc.setLabel("H"+labelc);
+                    sheapc.setLabel(labelc);
                     heapMap.put(labelc,sheapc);
                     break;
                 case "i":
                     int key = Integer.parseInt(input.get(++i));
-                    String labeli = input.get(++i);
+                    String labeli = "H"+input.get(++i);
                     SoftHeap sheapi= heapMap.get(labeli);
                     sheapi.insert(key);
                     break;
