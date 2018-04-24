@@ -1,5 +1,3 @@
-package Simulation;
-
 public class TestToString {
     public static void main(String[] args) {
 
@@ -25,7 +23,6 @@ public class TestToString {
         sheap.insert(19);
         sheap.insert(20);
         sheap.insert(21);
-
 
 
         Head h = sheap.getHeader().getNext();

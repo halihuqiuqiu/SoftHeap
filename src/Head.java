@@ -1,5 +1,3 @@
-package Simulation;
-
 public class Head {
     /* the queue head point to */
     private Node queue;

@@ -1,5 +1,3 @@
-package Simulation;
-
 /**
  * Soft heap class
  */
@@ -56,11 +54,12 @@ public class SoftHeap {
 
     /**
      * Constructor only get error rate
+     *
      * @param error
      */
-    public SoftHeap(double error){
+    public SoftHeap(double error) {
         this.label = "H0";
-        this.header=new Head();
+        this.header = new Head();
         this.tail = new Head();
         header.setRank(-1);    // set rank of empty hearder to -1
         tail.setRank(Integer.MAX_VALUE); // set rank of empty tail to infinity
@@ -70,9 +69,10 @@ public class SoftHeap {
 
     /**
      * Insert key to heap
+     *
      * @param newkey
      */
-    public void insert(int newkey){
+    public void insert(int newkey) {
         ILCell l = new ILCell();
         l.setKey(newkey);
         l.setNext(null);
@@ -86,35 +86,36 @@ public class SoftHeap {
 
     /**
      * meld a queue to the current heap
+     *
      * @param q
      */
-    public void meld(Node q){
+    public void meld(Node q) {
         Head tohead = header.getNext();
-        Head prevhead=tohead.getPrev();
+        Head prevhead = tohead.getPrev();
         //find first queue has euqal or larger rank
-        while (tohead.getQueue()!=null && tohead.getRank()< q.getRank()){
-            prevhead= tohead;
-            tohead=tohead.getNext();
+        while (tohead.getQueue() != null && tohead.getRank() < q.getRank()) {
+            prevhead = tohead;
+            tohead = tohead.getNext();
         }
         //union queue until no queue has same rank
-        while (tohead.getQueue()!=null && tohead.getRank()== q.getRank()){
-            Node top,bottom;
-            if(tohead.getQueue().getRank()>q.getRank()){
+        while (tohead.getQueue() != null && tohead.getRank() == q.getRank()) {
+            Node top, bottom;
+            if (tohead.getQueue().getRank() > q.getRank()) {
                 top = q;
                 bottom = tohead.getQueue();
-            }else{
-                top=tohead.getQueue();
-                bottom=q;
+            } else {
+                top = tohead.getQueue();
+                bottom = q;
             }
-            q=new Node();
-            q.setRank(top.getRank()+1);
+            q = new Node();
+            q.setRank(top.getRank() + 1);
             q.setCkey(top.getCkey());
             q.setChild(bottom);
             q.setNext(top);
             q.setIl(top.getIl());
             q.setIl_tail(top.getIl_tail());
 
-            tohead=tohead.getNext();
+            tohead = tohead.getNext();
         }
 
         // connect new queue into the heap
@@ -124,7 +125,7 @@ public class SoftHeap {
         h.setPrev(prevhead);
         h.setNext(tohead);
         prevhead.setNext(h);
-        if(tohead!=null){
+        if (tohead != null) {
             tohead.setPrev(h);
         }
 
@@ -133,17 +134,18 @@ public class SoftHeap {
 
     /**
      * soft heap to string
+     *
      * @return
      */
-    public String toString(){
-        String s ="";
-        s+=this.label+"\n";
-        Head tohead= header.getNext();
-        int i =1;
-        while (tohead.getQueue()!=null){
-            s+="Q"+i+"\n";
-            s+=tohead.getQueue().toString()+"\n";
-            tohead=tohead.getNext();
+    public String toString() {
+        String s = "";
+        s += this.label + "\n";
+        Head tohead = header.getNext();
+        int i = 1;
+        while (tohead.getQueue() != null) {
+            s += "Q" + i + "\n";
+            s += tohead.getQueue().toString() + "\n";
+            tohead = tohead.getNext();
             i++;
         }
         return s;

@@ -1,11 +1,9 @@
-package Simulation;
-
 /**
  * Node class
  */
 public class Node {
     /* upper bound of key list and rank */
-    private int ckey,rank;
+    private int ckey, rank;
     /* two k-1 queue */
     private Node next, child;
     /* head and tail of key list */
@@ -61,38 +59,39 @@ public class Node {
 
     /**
      * Node to string
+     *
      * @return
      */
-    public String toString(){
-        Node q =this;
-        String start ="["+q.getIl().toString()+","+ q.getCkey()+",";
-        String end="]";
-        if(q.getNext()==null && q.getChild()==null){   //no subtree
-            end="-"+end;
-        }else {
-            end=")"+end;
-            Node child=q.getChild();
-            Node root=q;
-            if(child!=null){
-                end=child.toString()+end;
-                if(root.getNext()!=null){
-                    root=root.getNext();
-                    child=root.getChild();
-                }else {
-                    child=null;
+    public String toString() {
+        Node q = this;
+        String start = "[" + q.getIl().toString() + "," + q.getCkey() + ",";
+        String end = "]";
+        if (q.getNext() == null && q.getChild() == null) {   //no subtree
+            end = "-" + end;
+        } else {
+            end = ")" + end;
+            Node child = q.getChild();
+            Node root = q;
+            if (child != null) {
+                end = child.toString() + end;
+                if (root.getNext() != null) {
+                    root = root.getNext();
+                    child = root.getChild();
+                } else {
+                    child = null;
                 }
             }
-            while (child!=null){
-                end=child.toString()+","+end; //from second subtree, sperate by ,
-                if(root.getNext()!=null){
-                    root=root.getNext();
-                    child=root.getChild();
-                }else {
-                    child=null;
+            while (child != null) {
+                end = child.toString() + "," + end; //from second subtree, sperate by ,
+                if (root.getNext() != null) {
+                    root = root.getNext();
+                    child = root.getChild();
+                } else {
+                    child = null;
                 }
             }
-            end= "("+end;
+            end = "(" + end;
         }
-        return start+end;
+        return start + end;
     }
 }

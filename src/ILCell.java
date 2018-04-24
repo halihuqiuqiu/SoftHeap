@@ -1,5 +1,3 @@
-package Simulation;
-
 /**
  * Key list class
  */
@@ -28,20 +26,21 @@ public class ILCell {
 
     /**
      * ILcell to String
+     *
      * @return
      */
-    public String toString(){
+    public String toString() {
         String s = "(";
         ILCell l = this;
-        if(l!=null){
-            s+=l.getKey();
-            l=l.getNext();
+        if (l != null) {
+            s += l.getKey();
+            l = l.getNext();
         }
-        while (l!=null){
-            s+=","+l.getKey();
-            l=l.getNext();
+        while (l != null) {
+            s += "," + l.getKey();
+            l = l.getNext();
         }
-        s+=")";
+        s += ")";
 
         return s;
     }
