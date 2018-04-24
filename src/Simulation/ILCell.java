@@ -1,7 +1,12 @@
 package Simulation;
 
+/**
+ * Key list class
+ */
 public class ILCell {
+    /* key value */
     private int key;
+    /* next ILCell after this */
     private ILCell next;
 
     public int getKey() {
@@ -21,6 +26,10 @@ public class ILCell {
     }
 
 
+    /**
+     * ILcell to String
+     * @return
+     */
     public String toString(){
         String s = "(";
         ILCell l = this;

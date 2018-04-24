@@ -1,8 +1,11 @@
 package Simulation;
 
 public class Head {
+    /* the queue head point to */
     private Node queue;
+    /* previousm, next and the head has min after current head */
     private Head prev, next, suffix_min;
+    /* rand of the queue it point to */
     private int rank;
 
     public Node getQueue() {
