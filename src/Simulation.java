@@ -18,7 +18,7 @@ public class Simulation {
 
     public static void simulate(double error){
 
-        int numHeap=1;
+        int numHeap=0;
         Map<String, SoftHeap> heapMap = new LinkedHashMap<>();
         Counter.setCounter(0);  // initialize Counter counter to 0
         CounterDeleteMin.setCounter(0);  // initialize DeleteMin counter to 0
@@ -29,7 +29,7 @@ public class Simulation {
             //System.out.println("r:"+r);
 
             if(r<3){
-                String labelc = "H"+numHeap++;
+                String labelc = "H"+(++numHeap);
                 SoftHeap sheapc = new SoftHeap(error);     //create new heap to insert
                 sheapc.setLabel(labelc);
                 sheapc.insert(ran.nextInt(100000));  //insert random number
@@ -66,7 +66,7 @@ public class Simulation {
 
         System.out.println(Counter.getCounter());
         System.out.println(heapMap.size());
-        System.out.println(heapMap.get("H1"));
+        System.out.println(heapMap.get("H10000"));
 
         /**
          for (String label: heapMap.keySet()){
