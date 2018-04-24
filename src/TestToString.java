@@ -23,6 +23,10 @@ public class TestToString {
         sheap.insert(19);
         sheap.insert(20);
         sheap.insert(21);
+        sheap.insert(100);
+        sheap.insert(1000000001);
+
+
 
 
         Head h = sheap.getHeader().getNext();
