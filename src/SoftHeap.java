@@ -133,16 +133,37 @@ public class SoftHeap {
             tohead.setPrev(h);
         }
 
+        fixMinList(h);
+
     }
 
 
     public void meld(SoftHeap sheap){
-        Head tohead = header.getNext();
+        Head tohead = sheap.getHeader().getNext();
         while (tohead.getQueue() != null) {
             meld(tohead.getQueue());
             tohead = tohead.getNext();
         }
     }
+
+    public void fixMinList(Head h){
+        Head tmpmin;
+        if(h.getNext()==tail){
+            tmpmin=h;
+        }else{
+            tmpmin=h.getNext().getSuffix_min();
+        }
+
+        while (h!=header){
+            Counter.setCounter(Counter.getCounter()+1);
+            if(h.getQueue().getCkey()<tmpmin.getQueue().getCkey()){
+                tmpmin=h;
+            }
+            h.setSuffix_min(tmpmin);
+            h=h.getPrev();
+        }
+    }
+
 
     /**
      * soft heap to string
