@@ -3,17 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3a57a19c-93fb-4084-91ca-a2cb273e233c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SoftHeap/Counter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SoftHeap/Counter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SoftHeap/Simulation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SoftHeap/Simulation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SoftHeap/SoftHeap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SoftHeap/SoftHeap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SoftHeap/input1" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SoftHeap/input1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SoftHeap/input2" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SoftHeap/input2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Counter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Counter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CounterDeleteMin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CounterDeleteMin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SoftHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SoftHeap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/input1" beforeDir="false" afterPath="$PROJECT_DIR$/src/input1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/input2" beforeDir="false" afterPath="$PROJECT_DIR$/src/input2" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,8 +19,8 @@
       <file leaf-file-name="TestToString.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TestToString.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="26" selection-start-line="3" selection-start-column="8" selection-end-line="25" selection-end-column="26" />
+            <state relative-caret-position="357">
+              <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -37,37 +28,19 @@
       <file leaf-file-name="SoftHeap.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SoftHeap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="61" column="35" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
+            <state relative-caret-position="115">
+              <caret line="141" column="34" selection-start-line="141" selection-start-column="34" selection-end-line="141" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CounterDeleteMin.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CounterDeleteMin.java">
+      <file leaf-file-name="Testing.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Testing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="67" selection-start-line="1" selection-start-column="67" selection-end-line="1" selection-end-column="67" />
+            <state relative-caret-position="833">
+              <caret line="49" column="9" lean-forward="true" selection-start-line="46" selection-start-column="8" selection-end-line="49" selection-end-column="9" />
               <folding>
-                <element signature="e#100#101#0" expanded="true" />
-                <element signature="e#130#131#0" expanded="true" />
-                <element signature="e#180#181#0" expanded="true" />
-                <element signature="e#221#222#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Counter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Counter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" selection-end-line="2" selection-end-column="3" />
-              <folding>
-                <element signature="e#103#104#0" expanded="true" />
-                <element signature="e#133#134#0" expanded="true" />
-                <element signature="e#183#184#0" expanded="true" />
-                <element signature="e#224#225#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,8 +49,11 @@
       <file leaf-file-name="Simulation.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Simulation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+            <state relative-caret-position="130">
+              <caret line="50" column="65" selection-start-line="50" selection-start-column="65" selection-end-line="50" selection-end-column="65" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -160,6 +136,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/YongYang/Documents/GitHub/SoftHeap/src/SoftHeap.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -275,12 +252,12 @@
       <workItem from="1524579831390" duration="210000" />
       <workItem from="1524580045908" duration="431000" />
       <workItem from="1524580506098" duration="3120000" />
-      <workItem from="1524591913265" duration="2717000" />
+      <workItem from="1524591913265" duration="5637000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17173000" />
+    <option name="totallyTimeSpent" value="20093000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="23" width="1202" height="805" extended-state="0" />
@@ -494,16 +471,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Testing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/input2">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -529,13 +496,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TestToString.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="26" selection-start-line="3" selection-start-column="8" selection-end-line="25" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -565,17 +525,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/TestToString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Testing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="9" lean-forward="true" selection-start-line="46" selection-start-column="8" selection-end-line="49" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SoftHeap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="61" column="35" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
+        <state relative-caret-position="115">
+          <caret line="141" column="34" selection-start-line="141" selection-start-column="34" selection-end-line="141" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Simulation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        <state relative-caret-position="130">
+          <caret line="50" column="65" selection-start-line="50" selection-start-column="65" selection-end-line="50" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

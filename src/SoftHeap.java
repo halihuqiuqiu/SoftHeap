@@ -60,7 +60,8 @@ public class SoftHeap {
      * @param error
      */
     public SoftHeap(double error) {
-        this.label = "H0";
+        this.error=error;
+        this.label = "H";
         this.header = new Head();
         this.tail = new Head();
         header.setRank(-1);    // set rank of empty hearder to -1
@@ -134,6 +135,14 @@ public class SoftHeap {
 
     }
 
+
+    public void meld(SoftHeap sheap){
+        Head tohead = header.getNext();
+        while (tohead.getQueue() != null) {
+            meld(tohead.getQueue());
+            tohead = tohead.getNext();
+        }
+    }
 
     /**
      * soft heap to string
