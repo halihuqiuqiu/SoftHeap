@@ -6,7 +6,7 @@ public class Testing {
     public static void main(String[] args) {
         String filename = args[0];
         ArrayList<String> input = new ArrayList<>();
-        Map<String, SoftHeap> heapMap = new HashMap<>();
+        Map<String, SoftHeap> heapMap = new LinkedHashMap<>();
         try {
             Scanner sc = new Scanner(new File(filename));
             while (sc.hasNext()) {

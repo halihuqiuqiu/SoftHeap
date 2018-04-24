@@ -17,8 +17,8 @@
       <file leaf-file-name="Testing.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Testing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="48" column="60" selection-start-line="48" selection-start-column="60" selection-end-line="48" selection-end-column="60" />
+            <state relative-caret-position="136">
+              <caret line="8" column="61" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -212,12 +212,12 @@
       <workItem from="1524535887963" duration="12000" />
       <workItem from="1524579831390" duration="210000" />
       <workItem from="1524580045908" duration="431000" />
-      <workItem from="1524580506098" duration="3027000" />
+      <workItem from="1524580506098" duration="3120000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14363000" />
+    <option name="totallyTimeSpent" value="14456000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="23" width="1202" height="805" extended-state="0" />
@@ -232,7 +232,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25581396" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.25581396" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
@@ -451,8 +451,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Testing.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="48" column="60" selection-start-line="48" selection-start-column="60" selection-end-line="48" selection-end-column="60" />
+        <state relative-caret-position="136">
+          <caret line="8" column="61" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
