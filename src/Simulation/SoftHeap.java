@@ -1,11 +1,54 @@
 package Simulation;
 
 public class SoftHeap {
+
+    private String label;
     private Head header, tail;
     private int r;
     private double error;
 
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public Head getHeader() {
+        return header;
+    }
+
+    public void setHeader(Head header) {
+        this.header = header;
+    }
+
+    public Head getTail() {
+        return tail;
+    }
+
+    public void setTail(Head tail) {
+        this.tail = tail;
+    }
+
+    public int getR() {
+        return r;
+    }
+
+    public void setR(int r) {
+        this.r = r;
+    }
+
+    public double getError() {
+        return error;
+    }
+
+    public void setError(double error) {
+        this.error = error;
+    }
+
     public SoftHeap(double error){
+        this.label = "H0";
         this.header=new Head();
         this.tail = new Head();
         header.setRank(-1);    // set rank of empty hearder to -1
@@ -28,12 +71,12 @@ public class SoftHeap {
 
     public void meld(Node q){
         Head tohead = header.getNext();
-        Head prevhead=tohead;
-        while (tohead!=null && tohead.getRank()< q.getRank()){
+        Head prevhead=tohead.getPrev();
+        while (tohead.getQueue()!=null && tohead.getRank()< q.getRank()){
             prevhead= tohead;
             tohead=tohead.getNext();
         }
-        while (tohead!=null && tohead.getRank()== q.getRank()){
+        while (tohead.getQueue()!=null && tohead.getRank()== q.getRank()){
             Node top,bottom;
             if(tohead.getQueue().getRank()>q.getRank()){
                 top = q;
@@ -64,4 +107,23 @@ public class SoftHeap {
         }
 
     }
+
+
+
+
+    public String toString(){
+        String s ="";
+        s+=this.label+"\n";
+        Head tohead= header.getNext();
+        int i =1;
+        while (tohead.getQueue()!=null){
+            s+="Q"+i+"\n";
+            s+=tohead.getQueue().toString()+"\n";
+            tohead=tohead.getNext();
+            i++;
+        }
+        return s;
+    }
+
+
 }
