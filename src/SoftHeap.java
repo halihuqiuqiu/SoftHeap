@@ -1,3 +1,5 @@
+import sun.jvm.hotspot.oops.MethodCounters;
+
 /**
  * Soft heap class
  */
@@ -100,7 +102,8 @@ public class SoftHeap {
         //union queue until no queue has same rank
         while (tohead.getQueue() != null && tohead.getRank() == q.getRank()) {
             Node top, bottom;
-            if (tohead.getQueue().getRank() > q.getRank()) {
+            Counter.setCounter(Counter.getCounter()+1);
+            if (tohead.getQueue().getCkey() > q.getCkey()) {
                 top = q;
                 bottom = tohead.getQueue();
             } else {

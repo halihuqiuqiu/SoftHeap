@@ -1,3 +1,6 @@
+/**
+ * Counter class only count key comparision for deletemin operation
+ */
 public class CounterDeleteMin {
     private static int counter;
 
