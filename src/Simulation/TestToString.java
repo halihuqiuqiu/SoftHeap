@@ -1,6 +1,6 @@
 package Simulation;
 
-public class TestHeap {
+public class TestToString {
     public static void main(String[] args) {
 
         SoftHeap sheap = new SoftHeap(0.01);

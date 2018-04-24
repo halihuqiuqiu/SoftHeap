@@ -1,8 +1,14 @@
 package Simulation;
 
+/**
+ * Node class
+ */
 public class Node {
+    /* upper bound of key list and rank */
     private int ckey,rank;
+    /* two k-1 queue */
     private Node next, child;
+    /* head and tail of key list */
     private ILCell il, il_tail;
 
     public int getCkey() {
@@ -53,11 +59,15 @@ public class Node {
         this.il_tail = il_tail;
     }
 
+    /**
+     * Node to string
+     * @return
+     */
     public String toString(){
         Node q =this;
         String start ="["+q.getIl().toString()+","+ q.getCkey()+",";
         String end="]";
-        if(q.getNext()==null && q.getChild()==null){
+        if(q.getNext()==null && q.getChild()==null){   //no subtree
             end="-"+end;
         }else {
             end=")"+end;
@@ -73,7 +83,7 @@ public class Node {
                 }
             }
             while (child!=null){
-                end=child.toString()+","+end;
+                end=child.toString()+","+end; //from second subtree, sperate by ,
                 if(root.getNext()!=null){
                     root=root.getNext();
                     child=root.getChild();

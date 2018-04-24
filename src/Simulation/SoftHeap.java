@@ -1,10 +1,17 @@
 package Simulation;
 
+/**
+ * Soft heap class
+ */
 public class SoftHeap {
 
+    /* lable of the Heap */
     private String label;
+    /* Header and tail of the heap */
     private Head header, tail;
+    /* rank exceed threshold r, can has corruption, sift() again */
     private int r;
+    /* error rate */
     private double error;
 
     public String getLabel() {
@@ -47,6 +54,10 @@ public class SoftHeap {
         this.error = error;
     }
 
+    /**
+     * Constructor only get error rate
+     * @param error
+     */
     public SoftHeap(double error){
         this.label = "H0";
         this.header=new Head();
@@ -57,6 +68,10 @@ public class SoftHeap {
         tail.setPrev(header);
     }
 
+    /**
+     * Insert key to heap
+     * @param newkey
+     */
     public void insert(int newkey){
         ILCell l = new ILCell();
         l.setKey(newkey);
@@ -69,13 +84,19 @@ public class SoftHeap {
         meld(q);
     }
 
+    /**
+     * meld a queue to the current heap
+     * @param q
+     */
     public void meld(Node q){
         Head tohead = header.getNext();
         Head prevhead=tohead.getPrev();
+        //find first queue has euqal or larger rank
         while (tohead.getQueue()!=null && tohead.getRank()< q.getRank()){
             prevhead= tohead;
             tohead=tohead.getNext();
         }
+        //union queue until no queue has same rank
         while (tohead.getQueue()!=null && tohead.getRank()== q.getRank()){
             Node top,bottom;
             if(tohead.getQueue().getRank()>q.getRank()){
@@ -96,6 +117,7 @@ public class SoftHeap {
             tohead=tohead.getNext();
         }
 
+        // connect new queue into the heap
         Head h = new Head();
         h.setQueue(q);
         h.setRank(q.getRank());
@@ -109,8 +131,10 @@ public class SoftHeap {
     }
 
 
-
-
+    /**
+     * soft heap to string
+     * @return
+     */
     public String toString(){
         String s ="";
         s+=this.label+"\n";
