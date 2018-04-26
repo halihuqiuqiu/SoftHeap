@@ -29,19 +29,33 @@ public class Testing {
                 case "i":
                     int key = Integer.parseInt(input.get(++i));
                     String labeli = "H"+input.get(++i);
-                    SoftHeap sheapi= heapMap.get(labeli);
-                    sheapi.insert(key);
+                    try{
+                        SoftHeap sheapi= heapMap.get(labeli);
+                        sheapi.insert(key);
+                    }catch (Exception e){
+                        break;
+                    }
                     break;
                 case "d":
                     String labeld = "H"+input.get(++i);
-                    SoftHeap sheapd= heapMap.get(labeld);
-                    sheapd.deletemin();
+                    try {
+                        SoftHeap sheapd= heapMap.get(labeld);
+                        sheapd.deletemin();
+                    }catch (Exception e){
+                        break;
+                    }
+
                     break;
                 case "m":
                     String heap1= "H"+input.get(++i);
                     String heap2= "H"+input.get(++i);
-                    heapMap.get(heap1).meld(heapMap.get(heap2));
-                    heapMap.remove(heap2);//remove the melded heap
+                    try{
+                        heapMap.get(heap1).meld(heapMap.get(heap2));
+                        heapMap.remove(heap2);//remove the melded heap
+                    }catch (Exception e){
+                        break;
+                    }
+
                     break;
                 default:
                     i++;  //ignore

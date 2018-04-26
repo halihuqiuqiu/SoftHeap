@@ -265,7 +265,7 @@ public class SoftHeap {
         if(h.getQueue().getIl()==null){
             h.getQueue().setIl_tail(null);   //empty item list
         }
-        System.out.println("delete:"+min);
+        //System.out.println("delete:"+min);
         return min;
 
     }

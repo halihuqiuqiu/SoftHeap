@@ -4,8 +4,18 @@ public class Simulation {
 
     public static void main(String[] args) {
 
-        simulate(0);
+
+
+
+        simulate(0.4);
+
         /**
+         *
+         simulate(1.0/2);
+         simulate(1.0/4);
+         simulate(1.0/8);
+         simulate(1.0/16);
+         simulate(1.0/32);
         simulate(0.01);
         simulate(0.05);
         simulate(0.1);
@@ -59,14 +69,26 @@ public class Simulation {
                 heapMap.remove(heap2);//remove the melded heap
                 //System.out.println(heapMap.size());
             }else{
-                continue;
+                try{
+                    int before = Counter.getCounter();
+                    List<String> keylist = new ArrayList<String>(heapMap.keySet());
+                    String heap = keylist.get(ran.nextInt(keylist.size()));    //radom  choose an exist heap
+                    heapMap.get(heap).deletemin();
+                    int after= Counter.getCounter();
+                    CounterDeleteMin.setCounter(CounterDeleteMin.getCounter()+after-before);
+                }catch (Exception e){
+                    continue;
+                }
+
             }
 
         }
 
-        System.out.println(Counter.getCounter());
-        System.out.println(heapMap.size());
-        System.out.println(heapMap.get("H10000"));
+        //System.out.println(Counter.getCounter());
+        System.out.println(CounterDeleteMin.getCounter());
+
+        //System.out.println(heapMap.size());
+        //System.out.println(heapMap.get("H10000"));
 
         /**
          for (String label: heapMap.keySet()){
