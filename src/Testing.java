@@ -19,7 +19,7 @@ public class Testing {
             System.out.println("file not find");
         }
         for (int i = 0; i < input.size(); i++) {
-            switch (input.get(i)) {
+            switch (input.get(i)) {  ///////////////////////////////不存在的考虑下
                 case "c":
                     String labelc = "H"+input.get(++i);
                     SoftHeap sheapc = new SoftHeap(0);
@@ -51,6 +51,7 @@ public class Testing {
 
         for (String label: heapMap.keySet()){
 
+            System.out.println(heapMap.get(label).getHeader().getNext().getRank());
             System.out.println(heapMap.get(label).toString());
         }
 

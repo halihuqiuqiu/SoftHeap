@@ -64,7 +64,13 @@ public class Node {
      */
     public String toString() {
         Node q = this;
-        String start = "[" + q.getIl().toString() + "," + q.getCkey() + ",";
+        String start = "[";
+        if(q.getIl()==null){
+            start+="(),";
+        }else {
+            start+=q.getIl().toString() + "," + q.getCkey() + ",";
+        }
+
         String end = "]";
         if (q.getNext() == null && q.getChild() == null) {   //no subtree
             end = "-" + end;
