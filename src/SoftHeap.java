@@ -225,6 +225,51 @@ public class SoftHeap {
         return v;
     }
 
+    public int deletemin (){
+        if(header.getNext()==tail){
+            throw new IllegalStateException();
+        }
+        Head h = header.getNext().getSuffix_min();
+
+        while (h.getQueue().getIl()==null){
+            Node tmp=h.getQueue();
+            int childcount=0;
+            while (tmp.getNext()!=null){   //count childen
+                tmp=tmp.getNext();
+                childcount++;
+            }
+            if(childcount<h.getRank()/2){
+                h.getPrev().setNext(h.getNext());
+                h.getNext().setPrev(h.getPrev()); // delete this head
+                fixMinList(h.getPrev());
+                tmp=h.getQueue();
+                while (tmp.getNext()!=null){
+                    meld(tmp.getChild());
+                    tmp=tmp.getNext();     //meld each child to heap
+                }
+            }else {
+                h.setQueue(sift(h.getQueue()));
+                if(h.getQueue().getCkey()==Integer.MAX_VALUE){
+                    h.getPrev().setNext(h.getNext());
+                    h.getNext().setPrev(h.getPrev()); // delete this head
+                    h=h.getPrev();
+                    fixMinList(h);
+                }
+            }
+            h=header.getNext().getSuffix_min();
+
+        }
+
+        int min = h.getQueue().getIl().getKey();
+        h.getQueue().setIl(h.getQueue().getIl().getNext());
+        if(h.getQueue().getIl()==null){
+            h.getQueue().setIl_tail(null);   //empty item list
+        }
+        return min;
+
+    }
+
+
 
     /**
      * soft heap to string

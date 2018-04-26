@@ -33,10 +33,15 @@ public class Testing {
                     sheapi.insert(key);
                     break;
                 case "d":
-                    i++;
+                    String labeld = "H"+input.get(++i);
+                    SoftHeap sheapd= heapMap.get(labeld);
+                    sheapd.deletemin();
                     break;
                 case "m":
-                    i++;
+                    String heap1= "H"+input.get(++i);
+                    String heap2= "H"+input.get(++i);
+                    heapMap.get(heap1).meld(heapMap.get(heap2));
+                    heapMap.remove(heap2);//remove the melded heap
                     break;
                 default:
                     i++;  //ignore
