@@ -60,7 +60,12 @@ public class SoftHeap {
      * @param error
      */
     public SoftHeap(double error) {
-        this.error=error;
+        this.error = error;
+        if (error == 0) {
+            this.r = Integer.MAX_VALUE;
+        } else {
+            this.r = 2 + 2 * (int) Math.ceil(Math.log(1 / error) / Math.log(2));
+        }
         this.label = "H";
         this.header = new Head();
         this.tail = new Head();
@@ -103,7 +108,7 @@ public class SoftHeap {
         //union queue until no queue has same rank
         while (tohead.getQueue() != null && tohead.getRank() == q.getRank()) {
             Node top, bottom;
-            Counter.setCounter(Counter.getCounter()+1);
+            Counter.setCounter(Counter.getCounter() + 1);
             if (tohead.getQueue().getCkey() > q.getCkey()) {
                 top = q;
                 bottom = tohead.getQueue();
@@ -138,7 +143,7 @@ public class SoftHeap {
     }
 
 
-    public void meld(SoftHeap sheap){
+    public void meld(SoftHeap sheap) {
         Head tohead = sheap.getHeader().getNext();
         while (tohead.getQueue() != null) {
             meld(tohead.getQueue());
@@ -146,22 +151,78 @@ public class SoftHeap {
         }
     }
 
-    public void fixMinList(Head h){
+    public void fixMinList(Head h) {
         Head tmpmin;
-        if(h.getNext()==tail){
-            tmpmin=h;
-        }else{
-            tmpmin=h.getNext().getSuffix_min();
+        if (h.getNext() == tail) {
+            tmpmin = h;
+        } else {
+            tmpmin = h.getNext().getSuffix_min();
         }
 
-        while (h!=header){
-            Counter.setCounter(Counter.getCounter()+1);
-            if(h.getQueue().getCkey()<tmpmin.getQueue().getCkey()){
-                tmpmin=h;
+        while (h != header) {
+            Counter.setCounter(Counter.getCounter() + 1);
+            if (h.getQueue().getCkey() < tmpmin.getQueue().getCkey()) {
+                tmpmin = h;
             }
             h.setSuffix_min(tmpmin);
-            h=h.getPrev();
+            h = h.getPrev();
         }
+    }
+
+    public Node sift(Node v) {
+        Node tmp;
+        v.setIl(null);
+        v.setIl_tail(null);
+        if (v.getNext() == null && v.getChild() == null) {
+            v.setCkey(Integer.MAX_VALUE);
+            return v;
+        }
+        v.setNext(sift(v.getNext()));
+        Counter.setCounter(Counter.getCounter() + 1);   //counter +1
+        if (v.getNext().getCkey() > v.getChild().getCkey()) {
+            tmp = v.getChild();
+            v.setChild(v.getNext());
+            v.setNext(tmp);
+        }
+
+        v.setIl(v.getNext().getIl());
+        v.setIl_tail(v.getNext().getIl_tail());
+        v.setCkey(v.getNext().getCkey());
+
+        //second sift
+        if (v.getRank() > r && (v.getRank() % 2 == 1 || v.getChild().getRank() < v.getRank() - 1)) {
+            v.setNext(sift(v.getNext()));
+            Counter.setCounter(Counter.getCounter() + 1);  //counter +1
+            if (v.getNext().getCkey() > v.getChild().getCkey()) {
+                tmp = v.getChild();
+                v.setChild(v.getNext());
+                v.setNext(tmp);
+            }
+            if (v.getNext().getCkey() != Integer.MAX_VALUE && v.getNext().getIl() != null) {
+                v.getNext().getIl_tail().setNext(v.getIl());
+                v.setIl(v.getNext().getIl());
+                if(v.getIl_tail()==null){
+                    v.setIl_tail(v.getNext().getIl_tail());
+                }
+                v.setCkey(v.getNext().getCkey());
+            }
+
+        }
+
+        if(v.getChild().getCkey()==Integer.MAX_VALUE){
+            if(v.getNext().getCkey()==Integer.MAX_VALUE){
+                v.setChild(null);
+                v.setNext(null);
+            }else{
+                v.setChild(v.getNext().getChild());
+                v.setNext(v.getNext().getNext());
+
+            }
+        }
+
+
+
+        return v;
     }
 
 
@@ -170,6 +231,7 @@ public class SoftHeap {
      *
      * @return
      */
+
     public String toString() {
         String s = "";
         s += this.label + "\n";
@@ -186,3 +248,4 @@ public class SoftHeap {
 
 
 }
+
