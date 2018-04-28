@@ -63,8 +63,10 @@ public class SoftHeap {
         this.error = error;
         if (error == 0) {
             this.r = Integer.MAX_VALUE;
+            //System.out.println("r:"+r);
         } else {
             this.r = 2 + 2 * (int) Math.ceil(Math.log(1 / error) / Math.log(2));
+            //System.out.println("r:"+r);
         }
         this.label = "H";
         this.header = new Head();

@@ -5,28 +5,54 @@ public class Simulation {
     public static void main(String[] args) {
 
 
+        simulate(0.25,10);
+        /*
+        double error=0.01;
+        while (error<=0.2){
+            simulate(error,60000);
+            simulate(error,70000);
+            simulate(error,80000);
+            simulate(error,90000);
+            simulate(error,100000);
+            error+=0.02;
+        }
+        */
+        /*
+        double error=0.1;
+        while (error<=0.5){
+            simulate(error,60000);
+            simulate(error,70000);
+            simulate(error,80000);
+            simulate(error,90000);
+            simulate(error,100000);
+            error+=0.1;
+        }
+        */
 
+        /*
+        System.out.println("Error,Counter,DeleteMinCounter");
 
-        simulate(0.4);
-
-        /**
-         *
-         simulate(1.0/2);
-         simulate(1.0/4);
-         simulate(1.0/8);
-         simulate(1.0/16);
-         simulate(1.0/32);
-        simulate(0.01);
-        simulate(0.05);
-        simulate(0.1);
-        simulate(0.2);
-        simulate(0.3);
-        simulate(0.5);
-         */
+        double i=0.0;
+        while (i<=0.51){
+            simulate(i);
+            //System.out.println(i);
+            if(i<0.1){
+                i+=0.00125;
+            }else if(i<0.2){
+                i+=0.0025;
+            }else if(i<0.3){
+                i+=0.005;
+            }else if(i<0.4){
+                i+=0.01;
+            }else{
+                i+=0.02;
+            }
+        }
+        */
 
     }
 
-    public static void simulate(double error){
+    public static void simulate(double error, int n){
 
         int numHeap=0;
         Map<String, SoftHeap> heapMap = new LinkedHashMap<>();
@@ -34,7 +60,11 @@ public class Simulation {
         CounterDeleteMin.setCounter(0);  // initialize DeleteMin counter to 0
 
         Random ran = new Random();
-        for(int i=0; i<100000;i++){
+        for(int i=0; i<n;i++){
+            if (i<50000){
+                Counter.setCounter(0);
+                CounterDeleteMin.setCounter(0);
+            }
             int r = ran.nextInt(10);
             //System.out.println("r:"+r);
 
@@ -84,8 +114,7 @@ public class Simulation {
 
         }
 
-        //System.out.println(Counter.getCounter());
-        System.out.println(CounterDeleteMin.getCounter());
+        System.out.println(error+","+Counter.getCounter()+","+CounterDeleteMin.getCounter());
 
         //System.out.println(heapMap.size());
         //System.out.println(heapMap.get("H10000"));
