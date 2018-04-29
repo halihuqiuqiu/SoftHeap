@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Simulation {
+public class Simulation3 {
 
     public static void main(String[] args) {
 
@@ -80,11 +80,9 @@ public class Simulation {
 
     public static void simulate(double error, int n){
 
-        int numHeap=0;
-        Map<String, SoftHeap> heapMap = new LinkedHashMap<>();
-        Counter.reset();  // initialize all counter to 0
-
         Random ran = new Random();
+        Counter.reset();  // initialize all counter to 0
+        SoftHeap sheapc = new SoftHeap(error);
         for(int i=0; i<n;i++){
             if (i==50000){
                 Counter.reset();
@@ -92,60 +90,27 @@ public class Simulation {
             int r = ran.nextInt(10);
             //System.out.println("r:"+r);
 
-            if(r<3){
+            if(r<8){
                 Counter.i++;
                 int before = Counter.getCounter();
-                String labelc = "H"+(++numHeap);
-                SoftHeap sheapc = new SoftHeap(error);     //create new heap to insert
-                sheapc.setLabel(labelc);
                 sheapc.insert(ran.nextInt(100000));  //insert random number
-                heapMap.put(labelc,sheapc);
-                int after= Counter.getCounter();
-                Counter.setInsertCounter(Counter.getInsertCounter()+after-before);
+                int after = Counter.getCounter();
+                Counter.setInsertCounter(Counter.getInsertCounter() + after - before);
                 //System.out.println(heapMap.size());
 
-            }else if(r<6){
-                Counter.i++;
-                if(heapMap.size()==0){
-                    continue;            //no heap exist
-                }
-                int before = Counter.getCounter();
-                List<String> keylist = new ArrayList<String>(heapMap.keySet());
-                String heap = keylist.get(ran.nextInt(keylist.size()));    //radom  choose an exist heap
-                heapMap.get(heap).insert(ran.nextInt(100000)); //insert random number
-                int after= Counter.getCounter();
-                Counter.setInsertCounter(Counter.getInsertCounter()+after-before);
-                //System.out.println(heapMap.size());
-
-            }else if(r<7){
-                Counter.m++;
-                if(heapMap.size()<2){      // no heap to meld
-                    continue;
-                }
-                int before = Counter.getCounter();
-                List<String> keylist = new ArrayList<String>(heapMap.keySet());
-                String heap1 = keylist.get(ran.nextInt(keylist.size()));
-                String heap2 = keylist.get(ran.nextInt(keylist.size()));
-                while(heap1==heap2){        //not meld same heap
-                    heap2 = keylist.get(ran.nextInt(keylist.size()));
-                }
-                heapMap.get(heap1).meld(heapMap.get(heap2));
-                heapMap.remove(heap2);//remove the melded heap
-                int after= Counter.getCounter();
-                Counter.setMeldCounter(Counter.getMeldCounter()+after-before);
-                //System.out.println(heapMap.size());
             }else{
                 Counter.d++;
                 try{
                     int before = Counter.getCounter();
-                    List<String> keylist = new ArrayList<String>(heapMap.keySet());
-                    String heap = keylist.get(ran.nextInt(keylist.size()));    //radom  choose an exist heap
-                    heapMap.get(heap).deletemin();
-                    int after= Counter.getCounter();
+                    sheapc.deletemin();
+                    int after = Counter.getCounter();
                     Counter.setDeleteCounter(Counter.getDeleteCounter()+after-before);
+                    //System.out.println(i+";"+Counter.getDeleteCounter());
                 }catch (Exception e){
                     continue;
                 }
+
+
 
             }
 
