@@ -4,16 +4,33 @@ public class Simulation {
 
     public static void main(String[] args) {
 
+
+        double i=0.0;
+        int n =100000;
+        while (i<=0.51){
+            simulate(i,n);
+            //System.out.println(i);
+            if(i<0.1){
+                i+=0.00125;
+            }else if(i<0.2){
+                i+=0.0025;
+            }else if(i<0.3){
+                i+=0.005;
+            }else if(i<0.4){
+                i+=0.01;
+            }else{
+                i+=0.02;
+            }
+        }
+
+        /*
         simulate(0.00125,100000);
         simulate(0.01,100000);
         simulate(0.05,100000);
         simulate(0.1,100000);
         simulate(0.3,100000);
         simulate(0.5,100000);
-
-
-
-
+        */
 
         /*
         simulate(0.1,100000);
@@ -55,26 +72,7 @@ public class Simulation {
         }
         */
 
-        /*
-        System.out.println("Error,Counter,DeleteMinCounter");
 
-        double i=0.0;
-        while (i<=0.51){
-            simulate(i);
-            //System.out.println(i);
-            if(i<0.1){
-                i+=0.00125;
-            }else if(i<0.2){
-                i+=0.0025;
-            }else if(i<0.3){
-                i+=0.005;
-            }else if(i<0.4){
-                i+=0.01;
-            }else{
-                i+=0.02;
-            }
-        }
-        */
 
     }
 
@@ -93,7 +91,6 @@ public class Simulation {
             //System.out.println("r:"+r);
 
             if(r<3){
-                Counter.i++;
                 int before = Counter.getCounter();
                 String labelc = "H"+(++numHeap);
                 SoftHeap sheapc = new SoftHeap(error);     //create new heap to insert
@@ -105,7 +102,6 @@ public class Simulation {
                 //System.out.println(heapMap.size());
 
             }else if(r<6){
-                Counter.i++;
                 if(heapMap.size()==0){
                     continue;            //no heap exist
                 }
@@ -118,7 +114,6 @@ public class Simulation {
                 //System.out.println(heapMap.size());
 
             }else if(r<7){
-                Counter.m++;
                 if(heapMap.size()<2){      // no heap to meld
                     continue;
                 }
@@ -135,7 +130,6 @@ public class Simulation {
                 Counter.setMeldCounter(Counter.getMeldCounter()+after-before);
                 //System.out.println(heapMap.size());
             }else{
-                Counter.d++;
                 try{
                     int before = Counter.getCounter();
                     List<String> keylist = new ArrayList<String>(heapMap.keySet());
@@ -151,11 +145,11 @@ public class Simulation {
 
         }
 
+
         System.out.println(error+","+Counter.getCounter()+
                 ","+Counter.getInsertCounter()+
                 ","+Counter.getMeldCounter()+
-                ","+Counter.getDeleteCounter()+
-                ","+Counter.i+","+Counter.m+","+Counter.d);
+                ","+Counter.getDeleteCounter());
 
         //System.out.println(heapMap.size());
         //System.out.println(heapMap.get("H10000"));

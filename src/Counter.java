@@ -6,14 +6,8 @@ public class Counter {
     private static int insertCounter;
     private static int deleteCounter;
     private static int meldCounter;
-    static int i;
-    static int m;
-    static int d;
 
     public static void reset(){
-        i=0;
-        m=0;
-        d=0;
         counter=0;
         insertCounter=0;
         deleteCounter=0;

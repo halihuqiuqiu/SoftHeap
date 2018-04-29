@@ -91,7 +91,6 @@ public class Simulation3 {
             //System.out.println("r:"+r);
 
             if(r<8){
-                Counter.i++;
                 int before = Counter.getCounter();
                 sheapc.insert(ran.nextInt(100000));  //insert random number
                 int after = Counter.getCounter();
@@ -99,7 +98,6 @@ public class Simulation3 {
                 //System.out.println(heapMap.size());
 
             }else{
-                Counter.d++;
                 try{
                     int before = Counter.getCounter();
                     sheapc.deletemin();
@@ -119,8 +117,7 @@ public class Simulation3 {
         System.out.println(error+","+Counter.getCounter()+
                 ","+Counter.getInsertCounter()+
                 ","+Counter.getMeldCounter()+
-                ","+Counter.getDeleteCounter()+
-                ","+Counter.i+","+Counter.m+","+Counter.d);
+                ","+Counter.getDeleteCounter());
 
         //System.out.println(heapMap.size());
         //System.out.println(heapMap.get("H10000"));

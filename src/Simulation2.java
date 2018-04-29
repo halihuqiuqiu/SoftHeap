@@ -3,7 +3,24 @@ import java.util.*;
 public class Simulation2 {
     public static void main(String[] args) {
 
-        /**
+
+        double i=0.0;
+        while (i<=0.51){
+            simulate2(i,100000);
+            //System.out.println(i);
+            if(i<0.1){
+                i+=0.00125;
+            }else if(i<0.2){
+                i+=0.0025;
+            }else if(i<0.3){
+                i+=0.005;
+            }else if(i<0.4){
+                i+=0.01;
+            }else{
+                i+=0.02;
+            }
+        }
+        /*
         simulate2(0.00125,100000);
         simulate2(0.01,100000);
         simulate2(0.02,100000);
@@ -13,11 +30,10 @@ public class Simulation2 {
         simulate2(0.2,100000);
         simulate2(0.3,100000);
         simulate2(0.4,100000);
-         */
-        simulate2(0.5,200000);
-        simulate2(0.5,150000);
         simulate2(0.5,100000);
-        simulate2(0.5,50000);
+
+*/
+
 
 
     }
