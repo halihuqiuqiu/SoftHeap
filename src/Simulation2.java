@@ -4,6 +4,7 @@ public class Simulation2 {
     public static void main(String[] args) {
 
 
+        /*
         double i=0.0;
         while (i<=0.51){
             simulate2(i,100000);
@@ -20,6 +21,7 @@ public class Simulation2 {
                 i+=0.02;
             }
         }
+        */
         /*
         simulate2(0.00125,100000);
         simulate2(0.01,100000);

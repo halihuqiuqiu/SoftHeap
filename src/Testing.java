@@ -2,6 +2,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
+/**
+ * Test class
+ * input file with error rate and operation
+ * after all operation, print heap
+ */
 public class Testing {
     public static void main(String[] args) {
         String filename = args[0];
@@ -67,9 +72,7 @@ public class Testing {
                     break;
             }
         }
-
         for (String label: heapMap.keySet()){
-
             //System.out.println(heapMap.get(label).getHeader().getNext().getRank());
             System.out.println(heapMap.get(label).toString());
         }

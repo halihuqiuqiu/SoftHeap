@@ -68,11 +68,8 @@ public class SoftHeap {
             this.r = 2 + 2 * (int) Math.ceil(Math.log(1 / error) / Math.log(2));
             //System.out.println("r:"+r);
         }
-        this.label = "H";
         this.header = new Head();
         this.tail = new Head();
-        header.setRank(-1);    // set rank of empty hearder to -1
-        tail.setRank(Integer.MAX_VALUE); // set rank of empty tail to infinity
         header.setNext(tail);
         tail.setPrev(header);
     }
@@ -103,12 +100,12 @@ public class SoftHeap {
         Head tohead = header.getNext();
         Head prevhead = tohead.getPrev();
         //find first queue has euqal or larger rank
-        while (tohead.getQueue() != null && tohead.getRank() < q.getRank()) {
+        while (tohead!= tail && tohead.getRank() < q.getRank()) {
             prevhead = tohead;
             tohead = tohead.getNext();
         }
         //union queue until no queue has same rank
-        while (tohead.getQueue() != null && tohead.getRank() == q.getRank()) {
+        while (tohead!= tail && tohead.getRank() == q.getRank()) {
             Node top, bottom;
             Counter.setCounter(Counter.getCounter() + 1);
             if (tohead.getQueue().getCkey() > q.getCkey()) {
@@ -125,7 +122,6 @@ public class SoftHeap {
             q.setNext(top);
             q.setIl(top.getIl());
             q.setIl_tail(top.getIl_tail());
-
             tohead = tohead.getNext();
         }
 
@@ -141,7 +137,6 @@ public class SoftHeap {
         }
 
         fixMinList(h);
-
     }
 
 
@@ -200,6 +195,7 @@ public class SoftHeap {
                 v.setChild(v.getNext());
                 v.setNext(tmp);
             }
+            Counter.setCounter(Counter.getCounter() + 1);  //counter +1
             if (v.getNext().getCkey() != Integer.MAX_VALUE && v.getNext().getIl() != null) {
                 v.getNext().getIl_tail().setNext(v.getIl());
                 v.setIl(v.getNext().getIl());
@@ -210,8 +206,9 @@ public class SoftHeap {
             }
 
         }
-
+        Counter.setCounter(Counter.getCounter() + 1);  //counter +1
         if(v.getChild().getCkey()==Integer.MAX_VALUE){
+            Counter.setCounter(Counter.getCounter() + 1);  //counter +1
             if(v.getNext().getCkey()==Integer.MAX_VALUE){
                 v.setChild(null);
                 v.setNext(null);
@@ -221,8 +218,6 @@ public class SoftHeap {
 
             }
         }
-
-
 
         return v;
     }
@@ -251,6 +246,7 @@ public class SoftHeap {
                 }
             }else {
                 h.setQueue(sift(h.getQueue()));
+                Counter.setCounter(Counter.getCounter() + 1);  //counter +1
                 if(h.getQueue().getCkey()==Integer.MAX_VALUE){
                     h.getPrev().setNext(h.getNext());
                     h.getNext().setPrev(h.getPrev()); // delete this head
